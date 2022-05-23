@@ -1,13 +1,19 @@
 import React from "react";
-import { StatusBar, SafeAreaView, ScrollView } from "react-native";
+import { StyleSheet, StatusBar, SafeAreaView } from "react-native";
 
 const Container = ({ children }) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.safeArea}>
       <StatusBar />
-      <ScrollView>{children}</ScrollView>
+      {children}
     </SafeAreaView>
   );
 };
 
 export default Container;
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
+});

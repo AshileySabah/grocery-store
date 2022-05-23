@@ -5,8 +5,9 @@ import {
   View,
   TouchableOpacity,
   Dimensions,
+  FlatList,
 } from "react-native";
-import List from "../../components/List";
+import Item from "../../components/Item";
 
 import Texto from "../../components/Texto";
 
@@ -17,27 +18,38 @@ const width = Dimensions.get("screen").width;
 const Cesta = () => {
   return (
     <View>
-      <Image style={styles.topo} source={mock?.topo} />
-      <Texto style={styles.detalhes}>{mock?.titulo}</Texto>
+      <FlatList
+        data={mock?.itens?.lista}
+        renderItem={Item}
+        keyExtractor={({ nome }) => nome}
+        ListHeaderComponent={() => {
+          return (
+            <>
+              <Image style={styles.topo} source={mock?.topo} />
+              <Texto style={styles.detalhes}>{mock?.titulo}</Texto>
 
-      <View style={styles.conteudo}>
-        <Texto style={styles.title}>{mock?.subtitulo}</Texto>
+              <View style={styles.conteudo}>
+                <Texto style={styles.title}>{mock?.subtitulo}</Texto>
 
-        <View style={styles.logoContainer}>
-          <Image style={styles.logo} source={mock?.logo} />
-          <Texto style={styles.loja}>{mock?.fazenda}</Texto>
-        </View>
+                <View style={styles.logoContainer}>
+                  <Image style={styles.logo} source={mock?.logo} />
+                  <Texto style={styles.loja}>{mock?.fazenda}</Texto>
+                </View>
 
-        <Texto style={styles.descricao}>{mock?.descricao}</Texto>
+                <Texto style={styles.descricao}>{mock?.descricao}</Texto>
 
-        <Texto style={styles?.preco}>{mock?.preco}</Texto>
+                <Texto style={styles?.preco}>{mock?.preco}</Texto>
 
-        <TouchableOpacity style={styles.botao}>
-          <Texto style={styles.textoBotao}>{mock?.botao}</Texto>
-        </TouchableOpacity>
+                <TouchableOpacity style={styles.botao}>
+                  <Texto style={styles.textoBotao}>{mock?.botao}</Texto>
+                </TouchableOpacity>
 
-        <List itens={mock?.itens} />
-      </View>
+                <Texto style={styles.tituloLista}>{mock?.itens?.titulo}</Texto>
+              </View>
+            </>
+          );
+        }}
+      />
     </View>
   );
 };
@@ -56,6 +68,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     marginTop: 10,
+    fontWeight: "bold",
   },
   conteudo: {
     paddingVertical: 8,
@@ -104,5 +117,10 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     lineHeight: 16,
+  },
+  tituloLista: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#464646",
   },
 });
