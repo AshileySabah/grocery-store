@@ -10,6 +10,7 @@ const mock = {
   descricao:
     "Uma cesta de produtos selecionandos cuidadosamente da fazenda direto para a sua cozinha.",
   preco: "R$ 40,00",
+  botao: "Comprar",
 };
 
 export default mock;

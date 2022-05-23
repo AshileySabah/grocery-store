@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleSheet, Image, View, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Image,
+  View,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
 
 import Texto from "../../components/Texto";
 
@@ -24,6 +30,10 @@ const Cesta = () => {
         <Texto style={styles.descricao}>{mock?.descricao}</Texto>
 
         <Texto style={styles?.preco}>{mock?.preco}</Texto>
+
+        <TouchableOpacity style={styles.botao}>
+          <Texto style={styles.textoBotao}>{mock?.botao}</Texto>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -70,11 +80,25 @@ const styles = StyleSheet.create({
   },
   descricao: {
     color: "#a3a3a3",
+    marginTop: 10,
   },
   preco: {
     color: "#2A9F85",
     fontWeight: "bold",
     fontSize: 22,
     marginTop: 10,
+  },
+  botao: {
+    backgroundColor: "#2a9f85",
+    paddingVertical: 15,
+    display: "flex",
+    alignItems: "center",
+    borderRadius: 5,
+    marginTop: 10,
+  },
+  textoBotao: {
+    color: "#fff",
+    fontSize: 16,
+    lineHeight: 16,
   },
 });
