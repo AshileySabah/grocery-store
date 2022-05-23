@@ -1,11 +1,11 @@
 import React from "react";
-import { StatusBar, SafeAreaView } from "react-native";
+import { StatusBar, SafeAreaView, ScrollView } from "react-native";
 
 const Container = ({ children }) => {
   return (
     <SafeAreaView>
       <StatusBar />
-      {children}
+      <ScrollView>{children}</ScrollView>
     </SafeAreaView>
   );
 };

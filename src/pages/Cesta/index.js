@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
+import List from "../../components/List";
 
 import Texto from "../../components/Texto";
 
@@ -34,6 +35,8 @@ const Cesta = () => {
         <TouchableOpacity style={styles.botao}>
           <Texto style={styles.textoBotao}>{mock?.botao}</Texto>
         </TouchableOpacity>
+
+        <List itens={mock?.itens} />
       </View>
     </View>
   );
@@ -95,6 +98,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 5,
     marginTop: 10,
+    marginBottom: 15,
   },
   textoBotao: {
     color: "#fff",
