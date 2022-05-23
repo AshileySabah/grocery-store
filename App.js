@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import Container from "./src/components/Container";
+import Cesta from "./src/pages/Cesta";
+
+import {
+  useFonts,
+  Montserrat_400Regular,
+  Montserrat_700Bold,
+  Montserrat_400Regular_Italic,
+} from "@expo-google-fonts/montserrat";
+
+import AppLoading from "expo-app-loading";
 
 export default function App() {
+  const [loadedFont] = useFonts({
+    MontserratRegular: Montserrat_400Regular,
+    MontserratBold: Montserrat_700Bold,
+    MontserratItalic: Montserrat_400Regular_Italic,
+  });
+
+  if (!loadedFont) {
+    return <AppLoading />;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Container>
+      <Cesta />
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
