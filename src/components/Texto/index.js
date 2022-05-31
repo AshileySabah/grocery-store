@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
+
+import styles from "./styles";
 
 const Texto = ({ children, style }) => {
   let estilo = styles.texto;
@@ -10,14 +12,3 @@ const Texto = ({ children, style }) => {
 };
 
 export default Texto;
-
-const styles = StyleSheet.create({
-  texto: {
-    fontFamily: "MontserratRegular",
-    fontWeight: "normal",
-  },
-  textoNegrito: {
-    fontFamily: "MontserratBold",
-    fontWeight: "normal",
-  },
-});

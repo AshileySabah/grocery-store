@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet, StatusBar, SafeAreaView } from "react-native";
+import { StatusBar, SafeAreaView } from "react-native";
+
+import styles from "./styles";
 
 const Container = ({ children }) => {
   return (
@@ -11,9 +13,3 @@ const Container = ({ children }) => {
 };
 
 export default Container;
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-  },
-});

@@ -1,7 +1,9 @@
 import React from "react";
+import { View, Image } from "react-native";
+
 import Texto from "../Texto";
 
-import { StyleSheet, View, Image } from "react-native";
+import styles from "./styles";
 
 const Item = ({ item: { nome, imagem } }) => (
   <View style={styles.container} key={nome}>
@@ -11,19 +13,3 @@ const Item = ({ item: { nome, imagem } }) => (
 );
 
 export default Item;
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    borderBottomWidth: 1,
-    borderBottomColor: "#ececec",
-    paddingVertical: 10,
-    marginHorizontal: 16,
-  },
-  image: {
-    width: 48,
-    height: 48,
-    marginRight: 10,
-  },
-});
